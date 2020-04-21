@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Auth0Provider } from './contexts/Auth0-context';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Auth0Provider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Auth0Provider>,
   document.getElementById('root')
 );
 
